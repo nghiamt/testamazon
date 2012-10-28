@@ -1,0 +1,30 @@
+<div id = "product_list">
+	<h1>Listing products</h1>
+
+	<table>
+
+		<% @products.each do |product| %>
+		<tr class="<%= cycle('line_odd', 'line_even')%>">
+			<td> <%= image_tag(product.image, :class => "image")%> </td>
+			<td class ="product_info">
+			<dt>
+				<%= product.title%>
+			</dt>
+			<dd>
+				<%= product.info%>
+			</dd></td>
+			<td class="price"> $<%= product.price %> </td>
+			<td class="category"><%= product.category %></td>
+			<td class="action_list">
+			<%= link_to 'Show', product %><br />
+			<%= link_to 'Edit', edit_product_path(product) %><br />
+			<%= link_to 'Destroy', product, confirm: 'Are you sure?', method: :delete %></td>
+		</tr>
+		<% end %>
+	</table>
+
+	<br />
+</div>
+
+<%= link_to 'New Product', new_product_path %>
+

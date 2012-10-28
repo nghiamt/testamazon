@@ -1,4 +1,13 @@
 Testamazon::Application.routes.draw do
+  resources :line_products
+
+  resources :carts
+
+  get "home/index"
+
+  resources :products
+  root :to => 'home#index'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

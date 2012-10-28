@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<div id = "product_list">
+	<h2><%= @product.title%></h2>
+
+	<table>
+		<tr>
+			<td> <%= image_tag(@product.image, :class => "image")%> </td>
+			<td class ="product_info">
+			<dd>
+				<%= @product.info%><br />
+				<b>Price:</b> $<%= @product.price %>
+			</dd></td>
+			<td class="category"><%= @product.category %></td>
+			<td class="action_list"> 
+				<%= link_to 'Edit', edit_product_path(@product) %>
+				<%= link_to 'Back', products_path %></td>
+		</tr>
+	</table>
+
+	<br />
+</div>

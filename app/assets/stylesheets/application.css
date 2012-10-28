@@ -1,13 +1,66 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the top of the
- * compiled file, but it's generally better to create a new file per style scope.
- *
- *= require_self
- *= require_tree .
-*/
+#product_list {
+	background: #F0FFFF;
+	padding: 30px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+#product_list .image {
+	width: 60px;
+	height: 70px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+#product_list .product_info{
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+#product_list .product_info dt {
+	font-weight: bold;
+	font-size: x-large;
+	padding-left: 20px;
+	width: 70%;
+	vertical-align: top;
+}
+
+#product_list .product_info dd {
+	margin: 0px;
+	padding-left: 20px;
+	text-align: justify;
+}
+
+#product_list .price {
+	padding: 10px;
+	vertical-align: center;
+}
+
+#product_list .category {
+	padding: 10px;
+	vertical-align: center;
+	width: 100px;
+	font-weight: bold;
+	text-align: center;
+}
+
+#product_list .action_list {
+	text-align: right;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+#product_list .line_odd {
+	background: #F0F8FF;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+#product_list .line_even {
+	background: #FFF8DC;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+
+
