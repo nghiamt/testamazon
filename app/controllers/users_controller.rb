@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
   # GET /users
   # GET /users.json
+  skip_before_filter :authorize_admin, :only => [:new, :show]
+  skip_before_filter :authorize, :only => [:new]
   def index
     @users = User.order(:name)
 

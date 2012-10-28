@@ -4,6 +4,7 @@
 	<table>
 
 		<% @products.each do |product| %>
+		<% if product.category == "Book"%>
 		<tr class="<%= cycle('line_odd', 'line_even')%>">
 			<td> <%= image_tag(product.image, :class => "image")%> </td>
 			<td class ="product_info">
@@ -19,18 +20,9 @@
 			<td class="price"> $<%= product.price %> </td>
 			<td class="category"><%= product.category %></td>
 		</tr>
+		<%end%>
 		<% end %>
 	</table>
 
 	<br />
 </div>
-<%= link_to 'Product', products_path%><br />
-<%= link_to 'Cart', carts_path%><br />
-<%= link_to 'Line_product', line_products_path%><br />
-<%= link_to 'Orders', orders_path%><br />
-<%= link_to 'Users', users_path%><br />
-<%= button_to 'Logout', logout_path, :method => :delete %><br />
-<%= link_to 'sign in', login_path, :method => :get%><br />
-<%= link_to 'register', new_user_path, :method => :get%>
-
-

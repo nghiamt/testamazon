@@ -1,4 +1,14 @@
 Testamazon::Application.routes.draw do
+  get 'book' => "category#book"
+
+  get 'phone' => "category#phone"
+
+  get 'computer' => "category#computer"
+
+  get 'help' => "static_page#help"
+
+  get  'about' => "static_page#about"
+
   get "admin/index"
   get 'admin' => 'admin#index'
   controller :sessions do
