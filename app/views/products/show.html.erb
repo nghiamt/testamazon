@@ -1,4 +1,6 @@
-<p id="notice"><%= notice %></p>
+<p id="notice">
+	<%= notice %>
+</p>
 
 <div id = "product_list">
 	<h2><%= @product.title%></h2>
@@ -8,15 +10,32 @@
 			<td> <%= image_tag(@product.image, :class => "image")%> </td>
 			<td class ="product_info">
 			<dd>
-				<%= @product.info%><br />
+				<%= @product.info%>
+				<br />
 				<b>Price:</b> $<%= @product.price %>
+			</dd>
+			<dd>
+				<br />
+				<%= button_to 'Add to Cart', line_products_path(:product_id => @product)%>
 			</dd></td>
-			<td class="category"><%= @product.category %></td>
-			<td class="action_list"> 
-				<%= link_to 'Edit', edit_product_path(@product) %>
-				<%= link_to 'Back', products_path %></td>
+			<td class="category_show"><%= @product.category %></td>
+			<% if session[:user_id]%>
+			<% if User.find_by_id(session[:user_id]).is_admin%>
+			<td class = "action_list"> <%= link_to 'Edit', edit_product_path(@product) %>
+			<%= link_to 'Back', products_path %> </td>
+			<%end%>
+			<%end%>
 		</tr>
 	</table>
 
 	<br />
+	<% if session[:user_id]%>
+	<% if User.find_by_id(session[:user_id]).is_admin%>
+	<%= link_to 'Back', products_path%>
+	<%end%>
+	<%else%>
+	<%= link_to 'Back', root_path%>
+	<%end%>
+	
+
 </div>

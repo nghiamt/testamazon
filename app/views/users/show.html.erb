@@ -22,4 +22,11 @@
 
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
+<% if session[:user_id]%>
+<% if User.find_by_id(session[:user_id]).is_admin%>
 <%= link_to 'Back', users_path %>
+<%end%>
+<%else%>
+<%= link_to 'Home', root_path %>
+<%end%>
+

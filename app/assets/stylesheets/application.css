@@ -1,8 +1,64 @@
-#product_list {
-	background: #F0FFFF;
-	padding: 30px;
+#banner {
+	background: #ffffff;
+	border-bottom: 2px solid;
+}
+
+#banner .image {
+	width: 150px;
+	height: 70px;
+	padding-left: 10px;
+}
+
+#banner .title {
+	font-size: 40px;
 	padding-top: 10px;
 	padding-bottom: 10px;
+	text-align: center;
+	font-weight: bold;
+	width: 72%;
+}
+
+#banner .menu {
+	word-spacing: 10px;
+	padding-top: 5px;
+	width: 200px;
+	vertical-align: top;
+	text-align: center;
+}
+
+#banner .welcome {
+	word-spacing: 5px;
+	padding-top: 10px;
+	width: 200px;
+	vertical-align: top;
+}
+
+#side {
+	background: #FFFFFF;
+	float: left;
+	padding: 30px;
+	padding-left: 40px;
+	vertical-align: top;
+	text-align: left;
+	width: 130px;
+	line-height: 25px;
+}
+
+#side li {
+	line-height: 20px;
+}
+
+#main {
+	background: #ffffff;
+	padding-left: 200px;
+}
+
+#product_list {
+	background: #ffffff;
+	padding: 30px;
+	padding-top: 0px;
+	padding-bottom: 10px;
+	border-left: 2px solid;
 }
 
 #product_list .image {
@@ -12,7 +68,7 @@
 	padding-bottom: 10px;
 }
 
-#product_list .product_info{
+#product_list .product_info {
 	padding-top: 10px;
 	padding-bottom: 10px;
 }
@@ -44,10 +100,19 @@
 	text-align: center;
 }
 
+#product_list .category_show {
+	padding: 10px;
+	vertical-align: top;
+	width: 100px;
+	font-weight: bold;
+	text-align: center;
+}
+
 #product_list .action_list {
 	text-align: right;
 	padding-left: 20px;
 	padding-right: 20px;
+	vertical-align: top;
 }
 
 #product_list .line_odd {
@@ -62,5 +127,27 @@
 	padding-bottom: 10px;
 }
 
+#cart {
+	background: #FFFFFF;
+	padding: 30px;
+	padding-left: 20px;
+	padding-top: 10px;
+	padding-right: 0px;
+	vertical-align: top;
+	text-align: left;
+	width: 200px;
+	border-left: 2px solid;
+}
 
+#cart h2 {
+	text-align: center;
+}
 
+#bottom {
+	text-align: center;
+	padding: 20px;
+	border-top: 2px solid;
+	padding-bottom: 5px;
+	margin-top: 50px;
+	
+}

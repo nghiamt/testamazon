@@ -49,7 +49,7 @@ class LineProductsController < ApplicationController
 
     respond_to do |format|
       if @line_product.save
-        format.html { redirect_to @line_product.cart }
+        format.html { redirect_to root_url }
         format.json { render json: @line_product, status: :created, location: @line_product }
       else
         format.html { render action: "new" }
