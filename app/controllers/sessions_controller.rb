@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+  skip_before_filter :authorize, :authorize_admin
   def new
   end
 
@@ -17,6 +18,7 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:user_id] = nil
-    redirect_to home_url, :notice => "Logged out"
+    session[:cart_id] = nil
+    redirect_to root_url, :notice => "Logged out"
   end
 end

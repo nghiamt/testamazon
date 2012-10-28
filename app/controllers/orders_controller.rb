@@ -1,6 +1,8 @@
 class OrdersController < ApplicationController
   # GET /orders
   # GET /orders.json
+  before_filter :authorize_admin, :only => [:index, :show, :edit, :destroy, :update]
+  before_filter :authorize, :only => [:new, :create]
   def index
     @orders = Order.all
 

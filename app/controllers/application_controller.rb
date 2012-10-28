@@ -1,11 +1,23 @@
 class ApplicationController < ActionController::Base
   before_filter :authorize
+  before_filter :authorize_admin
   protect_from_forgery
 
   protected
   def authorize
     unless User.find_by_id(session[:user_id])
       redirect_to login_url, :notice => "Please log in"
+    end
+  end
+
+  def authorize_admin
+    user = User.find_by_id(session[:user_id])
+    if user == nil
+      redirect_to login_url, :notice => "Please log in as a admin"
+    else
+      unless user.is_admin
+      redirect_to login_url, :notice => "Please log in as a admin"
+      end
     end
   end
 
