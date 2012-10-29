@@ -9,10 +9,11 @@
 			<td> <%= image_tag(product.image, :class => "image")%> </td>
 			<td class ="product_info">
 			<dt>
-				<%= product.title%>
+				<%= link_to product.title, product%>
 			</dt>
 			<dd>
-				<%= product.info%>
+				<%= truncate(product.info, :length => 300) %>
+					<%= link_to 'More', product%>
 			</dd>
 			<dd>
 				<%= button_to 'Add to Cart', line_products_path(:product_id => product)%>

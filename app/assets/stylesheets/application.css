@@ -71,6 +71,7 @@
 #product_list .product_info {
 	padding-top: 10px;
 	padding-bottom: 10px;
+	padding-right: 10px;
 }
 
 #product_list .product_info dt {
