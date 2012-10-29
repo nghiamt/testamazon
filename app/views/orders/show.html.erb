@@ -1,5 +1,6 @@
+<div id="user">
 <p id="notice"><%= notice %></p>
-
+<h3>Your order:</h3>
 <p>
   <b>Name:</b>
   <%= @order.name %>
@@ -14,12 +15,20 @@
   <b>Pay type:</b>
   <%= @order.pay_type %>
 </p>
-<p>Info:<br />
+<p><b>Products List:</b><br />
 	<% @order.line_products.each do |p|%>
-	<%=p.quantity%> x <%= p.product.title%><br />
+	<%=p.quantity%> x <%= p.product.title%> ..... $<%=p.product.price%><br />
 	<%end%>
 </p>
+<p><b>Total: $<%= @order.total_price%></b></p>
 
-
+<% if session[:user_id]%>
+<% if User.find_by_id(session[:user_id]).is_admin%>
 <%= link_to 'Edit', edit_order_path(@order) %> |
 <%= link_to 'Back', orders_path %>
+
+<%else%>
+<%= button_to 'Back to Home', root_path %>
+<%end%>
+<%end%>
+</div>

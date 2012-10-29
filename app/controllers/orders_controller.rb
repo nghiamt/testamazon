@@ -1,7 +1,7 @@
 class OrdersController < ApplicationController
   # GET /orders
   # GET /orders.json
-  before_filter :authorize_admin, :only => [:index, :show, :edit, :destroy, :update]
+  before_filter :authorize_admin, :only => [:index, :edit, :destroy, :update]
   before_filter :authorize, :only => [:new, :create]
   def index
     @orders = Order.all
@@ -28,7 +28,7 @@ class OrdersController < ApplicationController
   def new
     @cart = current_cart
     if @cart.line_products.empty?
-      redirect_to home_url, :notice => "Your Cart is empty"
+      redirect_to root_url, :notice => "Your Cart is empty"
       return
     end
     
@@ -59,7 +59,7 @@ class OrdersController < ApplicationController
       if @order.save
         Cart.destroy(session[:cart_id])
         session[:cart_id] = nil
-        format.html { redirect_to root_url, notice: 'Thank you for your order.' }
+        format.html { redirect_to @order, notice: 'Thank you for your order.' }
         format.json { render json: @order, status: :created, location: @order }
       else
         format.html { render action: "new" }
@@ -98,7 +98,6 @@ class OrdersController < ApplicationController
 end
 
 
- protected
   def authorize
     unless User.find_by_id(session[:user_id])
       redirect_to login_url, :notice => "Please log in"

@@ -12,7 +12,6 @@
 	</ul>
 </div>
 <% end %>
-
 <div class="field">
 	<%= f.label :name %>
 	<br />
@@ -31,15 +30,14 @@
 <div class="field">
 	<%= f.label :info %>
 	<br />
-	<%= f.text_area :info %>
+	<%= f.text_area :info, :rows => 6 %>
 </div>
 
 <% if session[:user_id]%>
 <% if User.find_by_id(session[:user_id]).is_admin%>
 <div class="field">
-	<%= f.label :is_admin %>
-	<br />
-	<%= f.check_box :is_admin %>
+	
+	<%= f.check_box :is_admin %> <%= f.label :is_admin %>
 </div>
 <%end%>
 <%end%>
@@ -49,3 +47,4 @@
 </div>
 
 <% end %>
+
