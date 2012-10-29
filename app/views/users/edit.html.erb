@@ -7,8 +7,11 @@
 <% if session[:user_id]%>
 <% if User.find_by_id(session[:user_id]).is_admin%>
 <%= link_to 'Back', users_path %>
-<%end%>
+
 <%else%>
 <%= link_to 'Back', @user %>
+<%end%>
+<%else%>
+<%= link_to 'Login', login_path %>
 <%end%>
 </div>

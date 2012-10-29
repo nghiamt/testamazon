@@ -1,29 +1,32 @@
+<div id="user">
 <h1>Listing users</h1>
 
 <table>
   <tr>
-    <th>Name</th>
-    <th>Password</th>
-    <th>Info</th>
-    <th>Is admin</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th class="order">Name</th>
+    <th class="order">Password</th>
+    <th class="order">Info</th>
+    <th class="order">Is admin</th>
+    <th class="order"></th>
+    <th class="order"></th>
+    <th class="order"></th>
   </tr>
 
 <% @users.each do |user| %>
   <tr>
-    <td><%= user.name %></td>
-    <td><%= user.password %></td>
-    <td><%= user.info %></td>
-    <td><%= user.is_admin %></td>
-    <td><%= link_to 'Show', user %></td>
-    <td><%= link_to 'Edit', edit_user_path(user) %></td>
-    <td><%= link_to 'Destroy', user, confirm: 'Are you sure?', method: :delete %></td>
+    <td class="order"><%= user.name %></td>
+    <td class="order"><%= user.password %></td>
+    <td class="order"><%= user.info %></td>
+    <td class="order"><%= user.is_admin %></td>
+    <td class="action"><%= link_to 'Show', user %> 
+    <%= link_to 'Edit', edit_user_path(user) %>
+    <%= link_to 'Destroy', user, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
-
+<p><%= will_paginate @users %></p><br />
 <%= link_to 'New User', new_user_path %>
+
+</div>

@@ -1,2 +1,13 @@
-<h1>Admin#index</h1>
-<p>Find me in app/views/admin/index.html.erb</p>
+<div id="user">
+<h2>Welcome Admin</h2>
+<p>You can view, edit, update, delete Products, Users or Orders.</p>
+<p style="margin-left: 40px;">
+	<%= link_to 'Products', products_path%>
+</p>
+<p style="margin-left: 40px;">
+	<%= link_to 'Orders', orders_path%>
+</p>
+<p style="margin-left: 40px;">
+	<%= link_to 'Users', users_path%>
+</p>
+</div>

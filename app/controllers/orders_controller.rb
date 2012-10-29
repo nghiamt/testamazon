@@ -4,7 +4,7 @@ class OrdersController < ApplicationController
   before_filter :authorize_admin, :only => [:index, :edit, :destroy, :update]
   before_filter :authorize, :only => [:new, :create]
   def index
-    @orders = Order.all
+    @orders = Order.paginate :page=>params[:page], :order=>'created_at desc',:per_page => 15
 
     respond_to do |format|
       format.html # index.html.erb

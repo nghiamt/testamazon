@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   # GET /users.json
   skip_before_filter :authorize_admin, :only => [:new, :show, :create, :edit, :update]
   def index
-    @users = User.order(:name)
+    @users = User.paginate :page=>params[:page], :order=>'name',:per_page => 15
 
     respond_to do |format|
       format.html # index.html.erb

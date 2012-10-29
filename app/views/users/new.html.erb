@@ -3,5 +3,12 @@
 
 <%= render 'form' %>
 
+<% if session[:user_id]%>
+<% if User.find_by_id(session[:user_id]).is_admin%>
 <%= link_to 'Back', users_path %>
+<%end%>
+<%else%>
+<%= link_to 'Back', root_path %>
+<%end%>
+
 </div>

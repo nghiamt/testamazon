@@ -3,7 +3,7 @@ class ProductsController < ApplicationController
   # GET /products.json
   skip_before_filter :authorize_admin, :only => :show
   def index
-    @products = Product.all
+    @products = Product.paginate :page=>params[:page], :order=>'title',:per_page => 5
 
     respond_to do |format|
       format.html # index.html.erb

@@ -148,25 +148,56 @@
 	padding: 20px;
 	border-top: 2px solid;
 	padding-bottom: 5px;
-	
 }
 
 #login {
 	padding: 30px;
 	padding-bottom: 40px;
 	background: #FFF8DC;
+	border-left: 2px solid;
 }
 
 #login .label {
 	font-weight: bold;
 	width: 80px;
+	
 }
-
 
 #user {
 	background: #FFF8DC;
 	vertical-align: top;
 	padding: 20px;
+	border-left: 2px solid;
 }
 
+#user .order {
+	text-align: left;
+	width: 150px;
+}
 
+#user .address {
+	text-align: left;
+	width: 350px;
+}
+
+#user .name {
+	text-align: left;
+	width: 200px;
+}
+
+#user .action {
+	text-align: left;
+	width: 250px;
+	word-spacing: 10px;
+}
+
+#about {
+	background: #FFF8DC;
+	vertical-align: top;
+	padding-top: 20px;
+	border-left: 2px solid;
+	text-align: justify;
+	padding-left: 40px;
+	padding-right: 40px;
+	padding-bottom: 40px;
+}

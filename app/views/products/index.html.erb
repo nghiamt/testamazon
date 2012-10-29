@@ -8,7 +8,7 @@
 			<td> <%= image_tag(product.image, :class => "image")%> </td>
 			<td class ="product_info">
 			<dt>
-				<%= product.title%>
+				<%= link_to product.title, product%>
 			</dt>
 			<dd>
 				<%= product.info%>
@@ -22,9 +22,12 @@
 		</tr>
 		<% end %>
 	</table>
-
 	<br />
+	<p><%= will_paginate @products %></p>
+	<br />
+	<%= link_to 'New Product', new_product_path %>
+
 </div>
 
-<%= link_to 'New Product', new_product_path %>
+
 
