@@ -2,7 +2,6 @@ class CartsController < ApplicationController
   # GET /carts
   # GET /carts.json
   before_filter :authorize_admin, :only => [:index]
-  skip_before_filter :authorize
   def index
     @carts = Cart.all
 

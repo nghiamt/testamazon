@@ -1,5 +1,5 @@
 class CategoryController < ApplicationController
- skip_before_filter :authorize, :authorize_admin
+ skip_before_filter :authorize_admin
   def book
       @products = Product.all
   end

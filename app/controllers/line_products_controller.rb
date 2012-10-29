@@ -2,7 +2,6 @@ class LineProductsController < ApplicationController
   # GET /line_products
   # GET /line_products.json
   skip_before_filter :authorize_admin, :only => [:create, :update, :destroy]
-  skip_before_filter :authorize
   def index
     @line_products = LineProduct.all
 
